@@ -1,0 +1,242 @@
+\documentclass[UTF8,12pt]{ctexart}
+%加载包
+\usepackage{geometry}%排版
+%a4版面，页边距1英寸,showframe 增加边框的参数。
+% 设置为A4纸，边距适中模式（永中office）
+\geometry{%
+	width = 210mm,%
+	height = 297mm,
+	left = 19.1mm,%
+	right = 19.1mm,%
+	top = 25.4mm,%
+	bottom = 25.4mm%
+}
+%\hyphenpenalty = 1000% 断字设置，值越大，断字越少。
+%\setlength{\parindent}{2em}% 缩进
+%\setlength{\parskip}{0.5ex} % 段间距
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}%公式
+\usepackage{amsthm}%定理环境
+
+%\usepackage{ntheorem}%定理环境，使用这个会使\maketitle版式出问题
+\usepackage{bm}%加粗
+
+\usepackage{mathrsfs}
+\numberwithin{equation}{section}%对公式以节{section}为基础进行编号.变成（1.1.1）有chapter才有1.1.1，不然只有section是1.1
+%\theoremstyle{plain}%定理用latex默认的版式
+\newtheorem{thm}{Theorem}[section]
+%\theoremstyle{definition}%定义用definition格式
+\newtheorem{defn}{Definition}
+%\theoremstyle{remark}%用remark格式
+\newtheorem{lemma}[thm]{lemma}
+\newtheorem{example}{Example}[section]
+
+\usepackage{multirow}%表格列合并宏包，\multirow命令.
+
+\usepackage{tabularx}%表格等宽，\begin{tabularx}命令.
+
+\usepackage{tcolorbox}%盒子
+\tcbuselibrary{skins, breakable}% 支持文本框跨页
+\usepackage[english]{babel}% 载入美式英语断字模板
+
+\usepackage{graphicx}
+
+\usepackage{float}
+
+\usepackage{listings}   %代码块
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+%设置代码块
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle,
+	language=R,                                       % 设置语言
+}
+
+\usepackage{appendix}%附录
+
+
+%标题页
+\title{Toy Matrix gradient}
+\author{Renhe W.}
+\date{ }
+\usepackage{hyperref}%可以生成pdf书签，可以跳转
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black
+}%使得目录没有红框
+
+%工具
+%使用文本框
+%\begin{tcolorbox}[enhanced]	\end{tcolorbox}
+%代码框
+%{\setmainfont{Courier New Bold}                       %设置代码字体                   
+%\begin{lstlisting}
+	
+%\end{lstlisting}}
+
+
+
+
+
+%文章开始部分
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\newpage
+	
+	%引言
+	%附录
+	\section{矩阵梯度\label{G}}
+	\subsection{实值函数相对于实向量的梯度}
+	对于$n\times 1$向量$\bm{X}$的梯度算子记作$\nabla_{\bm{X}}$，定义为:
+		\begin{equation}
+			\nabla_{\bm{X}}=[\frac{\partial }{\partial x_1},\frac{\partial }{\partial x_2},\cdots,\frac{\partial }{\partial x_n}]^T=\frac{\partial }{\partial\bm{X} }.
+		\end{equation}
+	\indent 因此，$n \times 1$实向量$\bm{X}$为变元的实际标量函数$f(\bm{X})$相对于$\bm{X}$的梯度是一个$n \times 1$的一列向量，定义为：
+		\begin{equation}
+			\nabla_{\bm{X}}f(\bm{X})=
+			\begin{bmatrix}
+				\frac{\partial f(\bm{X}) }{\partial x_1},&\frac{\partial f(\bm{X})}{\partial x_2},&\cdots, &\frac{\partial f(\bm{X})}{\partial x_n}
+			\end{bmatrix}^T=
+			\begin{bmatrix}
+				\frac{\partial f(\bm{X}) }{\partial x_1}\\
+				\frac{\partial f(\bm{X})}{\partial x_2}\\
+				\vdots \\
+			\frac{\partial f(\bm{X}) }{\partial x_n}	
+			\end{bmatrix}
+		=\frac{\partial f(\bm{X})}{\partial\bm{X}}.
+		\end{equation}
+	\indent 梯度方向的负方向为变元$\bm{X}$的梯度流(gradient flow)，记作：
+	\begin{equation}
+		\dot{\bm{X}}=-\nabla_{\bm{X}}f(\bm{X}).
+	\end{equation}
+	\indent 可以看出：
+	\begin{enumerate}
+		\item 一个以向量为变元函数的梯度为一个向量；
+		\item 梯度的每个分量代表变量函数在该分量方向上的变化率.
+	\end{enumerate}
+	\begin{tcolorbox}[enhanced]	
+	\quad 梯度向量最重要的性质之一是，它指出了当变元增大时函数$f$的最大增大 率。相反，梯度的负值（负梯度）指出了当变元增大时函数$f$的最大减小率。根 据这样一种性质，即可设计出求一函数极小值的迭代算法。
+	\end{tcolorbox}
+	
+	\indent 类似地，实值函数$f(x)$相对于$1 \times n$一行向量$x^T$的梯度为$1 × n$一行行向量，定义为:
+		\begin{equation}
+		\nabla_{\bm{X}^T}f(\bm{X})=
+		\begin{bmatrix}
+		\frac{\partial f(\bm{X}) }{\partial x_1},&\frac{\partial f(\bm{X})}{\partial x_2}  ,&\cdots  ,&\frac{\partial f(\bm{X}) }{\partial x_n}
+		\end{bmatrix}
+		=\frac{\partial f(\bm{X})}{\partial\bm{X}^T}.
+	\end{equation}
+	\indent $m$维一行向量函数$f(\bm{X})=[f_1(\bm{X}),\cdots,f_m(\bm{X}) ]$对$n$维一列向量$\bm{X}$的梯度为$ n\times m$矩阵\footnote{$f(x)$为列，$X$为行.}:
+		\begin{equation}\label{eq:函数对向量梯度}
+		\begin{bmatrix}
+			\frac{\partial f_1(\bm{X}) }{\partial x_1}	&	\frac{\partial f_2(\bm{X}) }{\partial x_1}  & \cdots &	\frac{\partial f_n(\bm{X}) }{\partial x_1} \\
+			\frac{\partial f_1(\bm{X}) }{\partial x_2}	&	\frac{\partial f_2(\bm{X}) }{\partial x_2}  & \cdots &	\frac{\partial f_n(\bm{X}) }{\partial x_2} \\
+			\vdots& \vdots & \cdots & \vdots\\
+		\frac{\partial f_1(\bm{X}) }{\partial x_n}	&	
+		\frac{\partial f_2(\bm{X}) }{\partial x_n}  & \cdots &	\frac{\partial f_n(\bm{X}) }{\partial x_n} \\
+		\end{bmatrix}.
+		\end{equation}
+		\indent 下面举几个例子：
+		\begin{example}
+			若$f(x)=[x_1,\cdots,x_n]$，则$\frac{\partial \bm{X}^T }{\partial \bm{X}}=\bm{I}$：\\\indent
+			由(\ref{eq:函数对向量梯度})，有：
+			$$\begin{bmatrix}
+				\frac{\partial x_1 }{\partial x_1}	&	\frac{\partial x_2 }{\partial x_1}  & \cdots &	\frac{\partial x_n }{\partial x_1} \\
+				\frac{\partial x_1 }{\partial x_2}	&	\frac{\partial x_2}{\partial x_2}  & \cdots &	\frac{\partial x_n }{\partial x_2} \\
+				\vdots& \vdots & \cdots & \vdots\\
+				\frac{\partial x_1 }{\partial x_n}	&	
+				\frac{\partial x_2 }{\partial x_n}  & \cdots &	\frac{\partial x_n }{\partial x_n} \\
+			\end{bmatrix}=
+		\begin{bmatrix}
+			1	&	0  & \cdots &0 \\
+			0	&	1 & \cdots & 0 \\
+			\vdots& \vdots & \cdots & \vdots\\
+			0	&	0  & \cdots &1 \\
+		\end{bmatrix}=\bm{I}.
+		$$
+			
+		\end{example}
+		
+		\subsection{实值函数的梯度矩阵}
+		在最优化问题中，需要最优化的对象可能是某个加权矩阵。因此，有必要 分析实值函数相对于矩阵变元的梯度。实值函数$f(A)$相对于$m\times n$是矩阵$A$的梯度为一$m\times n$矩阵，简称{\color{brown}梯度矩阵}， 定义为：
+		\begin{equation}\label{eq:实值函数的梯度矩阵}
+		\frac{\partial f(\bm{A}) }{\partial \bm{A}}	=
+			\begin{bmatrix}
+				\frac{\partial f(\bm{A}) }{\partial A_{11}}	&	\frac{\partial f(\bm{A}) }{\partial A_{12}} & 
+				\cdots &
+				\frac{\partial f(\bm{A}) }{\partial A_{1n}} \\
+				\frac{\partial f(\bm{A}) }{\partial A_{21}}	&	
+				\frac{\partial f(\bm{A}) }{\partial A_{22}} &
+				 \cdots & 
+				 \frac{\partial f(\bm{A}) }{\partial A_{2n}} \\
+				\vdots& \vdots & \cdots & \vdots\\
+				\frac{\partial f(\bm{A}) }{\partial A_{m1}}	&
+				\frac{\partial f(\bm{A}) }{\partial A_{m2}} & 
+				\cdots &
+				\frac{\partial f(\bm{A}) }{\partial A_{mn}}\\
+			\end{bmatrix}.
+		\end{equation}
+		\indent 式中$A_{ij}$为矩阵$A$的元素.
+		\\\indent 实值函数相对于矩阵变元的梯度具有以下性质：
+		\begin{example}
+			若$f(\bm{A})=c$是常数，其中$\bm{A}$为$m\times n$矩阵，则梯度$\frac{\partial c }{\partial A}=\bm{O}_{m\times n}$.
+		\end{example}
+		\begin{example}
+			若$\bm{A}\in R^{m\times n}$，$x\in R^{m\times 1}$，$y\in R^{n\times 1}$，则$\frac{\partial x^T\bm{A}y }{\partial \bm{A}}=xy^T$.
+			\\\indent ANS:\\\indent
+			$$\bm{A}=
+			\begin{bmatrix}
+				A_{11}	&A_{12} & \cdots & A_{1n} \\
+				A_{21}	&A_{22} & \cdots & A_{2n} \\
+				\vdots& \vdots & \cdots & \vdots\\
+				A_{m1}	&A_{m2}  & \cdots &A_{mn} \\
+			\end{bmatrix},
+			x=\begin{bmatrix}
+				x_1\\
+				x_2\\
+				\vdots\\
+				x_m
+			\end{bmatrix},
+			y=\begin{bmatrix}
+				y_1\\
+				y_2\\
+				\vdots\\
+				y_m
+			\end{bmatrix}.
+			$$
+		\indent	$\frac{\partial x^T\bm{A}y }{\partial \bm{A}}=\frac{\partial \sum_{i=1}^{m}\sum_{j=1}^{n}x_iA_{ij}y_j }{\partial \bm{A}}$，由(\ref{eq:实值函数的梯度矩阵})，$\frac{\partial \sum_{i=1}^{m}\sum_{j=1}^{n}x_iA_{ij}y_j }{\partial \bm{A}}=
+			\begin{bmatrix}
+			x_1y_1	&x_1y_2 & \cdots & x_1y_n \\
+			x_2y_1	&x_2y_2 & \cdots & x_2y_n \\
+			\vdots& \vdots & \cdots & \vdots\\
+			x_my_1	&x_my_2  & \cdots &x_my_n \\
+		\end{bmatrix}=xy^T.
+		$
+		\end{example}
+
+	
+\end{document}

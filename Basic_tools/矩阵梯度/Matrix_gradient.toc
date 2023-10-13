@@ -1,0 +1,4 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}矩阵梯度}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}实值函数相对于实向量的梯度}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}实值函数的梯度矩阵}{3}{subsection.1.2}%

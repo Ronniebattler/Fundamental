@@ -1,0 +1,163 @@
+\documentclass[UTF8,12pt]{ctexart}
+%加载包
+\usepackage{geometry}%排版
+%a4版面，页边距1英寸,showframe 增加边框的参数。
+% 设置为A4纸，边距适中模式（永中office）
+\geometry{%
+	width = 210mm,%
+	height = 297mm,
+	left = 19.1mm,%
+	right = 19.1mm,%
+	top = 25.4mm,%
+	bottom = 25.4mm%
+}
+%\hyphenpenalty = 1000% 断字设置，值越大，断字越少。
+%\setlength{\parindent}{2em}% 缩进
+%\setlength{\parskip}{0.5ex} % 段间距
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}%公式
+\usepackage{amsthm}%定理环境
+
+%\usepackage{ntheorem}%定理环境，使用这个会使\maketitle版式出问题
+\usepackage{bm}%加粗
+
+\usepackage{mathrsfs}
+\numberwithin{equation}{section}%对公式以节{section}为基础进行编号.变成（1.1.1）有chapter才有1.1.1，不然只有section是1.1
+%\theoremstyle{plain}%定理用latex默认的版式
+\newtheorem{thm}{Theorem}[section]
+%\theoremstyle{definition}%定义用definition格式
+\newtheorem{defn}{Definition}
+%\theoremstyle{remark}%用remark格式
+\newtheorem{lemma}[thm]{lemma}
+\newtheorem{example}{Example}[section]
+
+\usepackage{multirow}%表格列合并宏包，\multirow命令.
+
+\usepackage{tabularx}%表格等宽，\begin{tabularx}命令.
+
+\usepackage{tcolorbox}%盒子
+\tcbuselibrary{skins, breakable}% 支持文本框跨页
+\usepackage[english]{babel}% 载入美式英语断字模板
+
+\usepackage{graphicx}
+
+\usepackage{float}
+
+\usepackage{listings}   %代码块
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+%设置代码块
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle,
+	language=R,                                       % 设置语言
+}
+
+\usepackage{appendix}%附录
+
+
+%标题页
+\title{Commonly used inequalities}
+\author{Renhe W.}
+\date{ }
+\usepackage{hyperref}%可以生成pdf书签，可以跳转
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black
+}%使得目录没有红框
+
+%工具
+%使用文本框
+%\begin{tcolorbox}[enhanced]	\end{tcolorbox}
+%代码框
+%{\setmainfont{Courier New Bold}                       %设置代码字体                   
+%\begin{lstlisting}
+	
+%\end{lstlisting}}
+
+\usepackage{titlesec}
+% 调整 section 标题格式
+\titleformat{\section}
+{\normalfont\large\bfseries}  % 字体设置：小号、加粗
+{\thesection}  % 标签（例如“1.1”）
+{1em}  % 标签和标题文字之间的距离
+{}  % 前缀代码
+[\raggedright]  % 后缀代码（使标题靠左对齐）
+
+% 调整 section 标题间距
+\titlespacing{\section}
+{0pt}  % 左边距
+{*1}   % 标题前的间距
+{*1}   % 标题后的间距
+
+
+
+%文章开始部分
+\begin{document}
+	\maketitle
+	%\tableofcontents
+	%\newpage
+	在统计学的渐进理论和证明中，一些经典的不等式被广泛使用，以下是其中一些常用的不等式：
+	\section{ Markov 不等式 (Markov's Inequality)}
+	设 $X$ 是一个非负的随机变量，对任意 $a>0$ ，有:
+	$$
+	P(X \geq a) \leq \frac{E[X]}{a}.
+	$$
+	\section{Chebyshev 不等式 (Chebyshev's Inequality)}
+	设 $X$ 是一个具有有限均值 $\mu$ 和方差 $\sigma^2$ 的随机变量，对任意 $k>0$ ，有:
+	$$
+	P(|X-\mu| \geq k \sigma) \leq \frac{1}{k^2}.
+	$$
+	\section{Jensen 不等式 (Jensen's Inequality)}
+	设 $\phi$ 是一个凸函数，如果 $E[|X|]<\infty$ 并且 $E[|\phi(X)|]<\infty$ ，则:
+	$$
+	\phi(E[X]) \leq E[\phi(X)].
+	$$
+	\section{Hölder 不等式 (Hölder's Inequality)}
+	设 $p>0$ 和 $q>0$ 满足 $\frac{1}{p}+\frac{1}{q}=1$ ，如果 $X$ 和 $Y$ 是随机变量并且 $E\left[|X|^p\right]<\infty$ 和 $E\left[|Y|^q\right]<\infty$ ，则:
+	$$
+	|E[X Y]| \leq\left(E\left[|X|^p\right]\right)^{1 / p}\left(E\left[|Y|^q\right]\right)^{1 / q}.
+	$$
+	\section{ Minkowski 不等式 (Minkowski's Inequality)}
+	设 $p \geq 1$ ，如果 $X$ 和 $Y$ 是随机变量且 $E\left[|X|^p\right]<\infty$ 和 $E\left[|Y|^p\right]<\infty$ ，则:
+	$$
+	\left(E\left[|X+Y|^p\right]\right)^{1 / p} \leq\left(E\left[|X|^p\right]\right)^{1 / p}+\left(E\left[|Y|^p\right]\right)^{1 / p}.
+	$$
+	\section{Cauchy-Schwarz 不等式 (Cauchy-Schwarz Inequality)} 
+	
+	如果 $X$ 和 $Y$ 是随机变量且 $E\left[X^2\right]<\infty$ 和 $E\left[Y^2\right]<\infty$ ，则:
+	$$
+	|E[X Y]|^2 \leq E\left[X^2\right] E\left[Y^2\right].
+	$$
+	\section{Chernoff 不等式 (Chernoff's Inequality)} 
+	
+	对于任意 $t>0$ 和随机变量 $X$ ，有:
+	$$
+	P(X \geq t) \leq \frac{E\left[e^{\lambda X}\right]}{e^{\lambda t}},
+	$$
+	对任意正的 $\lambda$.
+
+	
+\end{document}
