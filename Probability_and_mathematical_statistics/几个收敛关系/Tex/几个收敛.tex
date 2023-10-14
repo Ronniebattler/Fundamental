@@ -1,0 +1,236 @@
+\documentclass[UTF8,12pt]{ctexart}
+%加载包
+\usepackage{geometry}%排版
+%a4版面，页边距1英寸,showframe 增加边框的参数。
+% 设置为A4纸，边距适中模式（永中office）
+\geometry{%
+	width = 210mm,%
+	height = 297mm,
+	left = 19.1mm,%
+	right = 19.1mm,%
+	top = 25.4mm,%
+	bottom = 25.4mm%
+}
+%\hyphenpenalty = 1000% 断字设置，值越大，断字越少。
+%\setlength{\parindent}{2em}% 缩进
+%\setlength{\parskip}{0.5ex} % 段间距
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}%公式
+\usepackage{amsthm}%定理环境
+
+%\usepackage{ntheorem}%定理环境，使用这个会使\maketitle版式出问题
+\usepackage{bm}%加粗
+
+\usepackage{mathrsfs}
+\numberwithin{equation}{section}%对公式以节{section}为基础进行编号.变成（1.1.1）有chapter才有1.1.1，不然只有section是1.1
+%\theoremstyle{plain}%定理用latex默认的版式
+\newtheorem{thm}{Theorem}[section]
+%\theoremstyle{definition}%定义用definition格式
+\newtheorem{defn}{Definition}
+%\theoremstyle{remark}%用remark格式
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{proposition}{Proposition}[section]
+%\newtheorem{proposition}[thm]{Proposition}%和thm定理一起计数
+\usepackage{multirow}%表格列合并宏包，\multirow命令.
+
+\usepackage{tabularx}%表格等宽，\begin{tabularx}命令.
+
+\usepackage{tcolorbox}%盒子
+\tcbuselibrary{skins, breakable}% 支持文本框跨页
+\usepackage[english]{babel}% 载入美式英语断字模板
+
+\usepackage{graphicx}
+
+\usepackage{float}
+
+\usepackage{listings}   %代码块
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+%设置代码块
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle,
+	language=R,                                       % 设置语言
+}
+
+\usepackage{appendix}%附录
+
+
+%标题页
+\title{几个常用的收敛}
+\author{Renhe W.}
+\date{ }
+\usepackage{hyperref}%可以生成pdf书签，可以跳转
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black
+}%使得目录没有红框
+
+%工具
+%使用文本框
+%\begin{tcolorbox}[enhanced]	\end{tcolorbox}
+%代码框
+%{\setmainfont{Courier New Bold}                       %设置代码字体                   
+%\begin{lstlisting}
+	
+%\end{lstlisting}}
+
+%\usepackage{titlesec}
+%% 调整 section 标题格式
+%\titleformat{\section}
+%{\normalfont\large\bfseries}  % 字体设置：小号、加粗
+%{\thesection}  % 标签（例如“1.1”）
+%{1em}  % 标签和标题文字之间的距离
+%{}  % 前缀代码
+%[\raggedright]  % 后缀代码（使标题靠左对齐）
+%
+%% 调整 section 标题间距
+%\titlespacing{\section}
+%{0pt}  % 左边距
+%{*1}   % 标题前的间距
+%{*1}   % 标题后的间距
+
+
+
+%文章开始部分
+\begin{document}
+	\maketitle
+	%\tableofcontents
+	%\newpage
+	\section{Definitions}
+	统计学中的几个收敛的定义如下：
+	\begin{defn}[几乎必然收敛 (Almost Surely Convergence, a.s.)]
+		序列 $\left\{X_n\right\}$ 几乎必然收敛到 $X$ ，记为 $X_n \stackrel{\text { a.s. }}{\longrightarrow} X$ ，如果:
+		$$
+		P\left(\lim _{n \rightarrow \infty} X_n=X\right)=1.
+		$$
+	\end{defn}
+	
+	\begin{defn}[依概率收敛 (Convergence in Probability)]
+		序列 $\left\{X_n\right\}$ 依概率收敛到 $X$ ，记为 $X_n \stackrel{p}{\longrightarrow} X$ ，如果对任意 $\epsilon>0$ ，有:
+		$$
+		\lim _{n \rightarrow \infty} P\left(\left|X_n-X\right|>\epsilon\right)=0.
+		$$
+	\end{defn}
+	
+	\begin{defn}[依分布收敛 (Convergence in Distribution)]
+		序列 $\left\{X_n\right\}$ 依分布收敛到 $X$ ，记为 $X_n \stackrel{d}{\longrightarrow} X$ ，如果对于任意连续有界函数 $g$ ，有:
+		$$
+		\lim _{n \rightarrow \infty} E\left[g\left(X_n\right)\right]=E[g(X)]
+		$$
+		或者等价地，对所有 $x$ 在哪里分布函数 $F$ 是连续的，有:
+		$$
+		\lim _{n \rightarrow \infty} F_n(x)=F(x).
+		$$
+	\end{defn}
+	
+	\begin{tcolorbox}[enhanced,title={三者关系}]
+		
+		\begin{enumerate}
+			\item 几乎必然收敛 $\Rightarrow$ 依概率收敛\label{1}\\
+			如果 $X_n \stackrel{\text { a.s. }}{\longrightarrow} X$ ，则 $X_n \stackrel{p}{\longrightarrow} X$. 这个结果可以通过Egorov定理来证明.
+			\item  依概率收敛 $\Rightarrow$ 依分布收敛\label{2}\\
+			如果 $X_n \stackrel{p}{\longrightarrow} X$ ，则 $X_n \stackrel{d}{\longrightarrow} X$. 这可以从依概率收敛的定义直接推导出来.
+			\item 几乎必然收敛 $\nRightarrow$ 依分布收敛\\
+			几乎必然收敛不一定导致依分布收敛，除非 $X_n$ 和 $X$ 定义在同一个概率空间中。当它们在 同一概率空间时，由\ref{1}和\ref{2}的关系，我们可以说几乎必然收敛导致依分布收敛.		
+		\end{enumerate}		
+	\end{tcolorbox}
+	
+	\section{Proofs}
+	\subsection{证明 1: 几乎必然收敛 $\Rightarrow$ 依概率收敛}
+	\begin{thm}
+		如果 $X_n \stackrel{\text { a.s. }}{\longrightarrow} X$ ，则 $X_n \stackrel{p}{\longrightarrow} X$.
+	\end{thm}
+	\begin{proof}
+		假设 $X_n \stackrel{\text { a.s. }}{\longrightarrow} X$ ，我们要证明对于任意的 $\epsilon>0$ ，有:
+		$$
+		\lim _{n \rightarrow \infty} P\left(\left|X_n-X\right|>\epsilon\right)=0
+		$$
+		由于 $X_n$ 几乎必然收敛到 $X$ ，我们有:
+		$$
+		P\left(\lim _{n \rightarrow \infty} X_n=X\right)=1,
+		$$
+		这意味着，对于任意的 $\epsilon>0$ ，事件 $\left\{\left|X_n-X\right|>\epsilon\right.$ i.o. $\}$ (i.o. 是指无穷次) 的概率是 0 ， 即:
+		$$
+		P\left(\left|X_n-X\right|>\epsilon \text { i.o. }\right)=0,
+		$$
+		由 Borel-Cantelli 引理，如果 $P\left(\left|X_n-X\right|>\epsilon\right.$ i.o. $)=0$ ，那么 $P\left(\left|X_n-X\right|>\right.$ $\epsilon$ finitely many) $=1$ ，即只有有限个 $n$ 使得 $\left|X_n-X\right|>\epsilon$ 。这意味着对于足够大的 $n$ ， 我们有:
+		$$
+		P\left(\left|X_n-X\right|>\epsilon\right)=0,
+		$$
+		所以 $X_n \stackrel{p}{\longrightarrow} X$.
+	\end{proof}
+	
+	\begin{thm}[反推条件]
+		如果$X_n \stackrel{p}{\longrightarrow} X$且$\{X_n\}$是单调的，则$X_n \stackrel{\text { a.s. }}{\longrightarrow} X$.
+	\end{thm}
+	
+	\subsection{证明 2: 依概率收敛 $\Rightarrow$ 依分布收敛}
+	
+	
+	\begin{proposition}[准备知识] 这里介绍几个要用的知识：\\
+		$P(X+Y \leqslant a+b) \leq P(X \leqslant a)+P(Y \leqslant b)$\\
+		$P(X+Y \leq a+b) \geqslant P(X \leq a$ 且 $Y \leqslant b)$\\
+		$P(A B) \geqslant P(A)-P(\bar{B})$
+		$$
+		\begin{aligned}
+			& P(A B)=P(A \bar{B})=P(A-\bar{B}) \\
+			&=P(A)-P(A \bar{B}) \\
+			& P(A \bar{B}) \leq P(\bar{B}) P(A B) \geq P(A)-P(\bar{B})
+		\end{aligned}
+		$$	
+	\end{proposition}
+	
+	\begin{thm}
+		如果 $X_n \stackrel{p}{\longrightarrow} X$ ，则 $X_n \stackrel{d}{\longrightarrow} X$.
+	\end{thm}
+	
+	\begin{proof}
+		假设 $X_n \stackrel{p}{\longrightarrow} X$ ，我们要证明 $X_n \stackrel{d}{\longrightarrow} X$ ，即对于任意的连续点 $x$ ，我们有:
+		$$
+		\lim _{n \rightarrow \infty} F_n(x)=F(x),
+		$$
+		其中 $F_n$ 和 $F$ 分别是 $X_n$ 和 $X$ 的分布函数. 我们可以用依概率收敛的定义来证明这一点. 首先，我们注意到:
+		$$
+		\left|F_n(x)-F(x)\right|=\left|P\left(X_n \leq x\right)-P(X \leq x)\right| \leq P\left(\left|X_n-X\right|>\epsilon\right)
+		$$
+		由于 $X_n \stackrel{p}{\longrightarrow} X$ ，我们知道:
+		$$
+		\lim _{n \rightarrow \infty} P\left(\left|X_n-X\right|>\epsilon\right)=0,
+		$$
+		这意味着:
+		$$
+		\lim _{n \rightarrow \infty}\left|F_n(x)-F(x)\right|=0,
+		$$
+		所以 $X_n \stackrel{d}{\longrightarrow} X$.
+	\end{proof}
+
+	\begin{thm}[反推条件：退化分布条件下]
+		如果 $X_n \stackrel{d}{\longrightarrow} C$，$C$为常数 ，则$X_n \stackrel{p}{\longrightarrow} C$ .
+	\end{thm}
+
+	
+\end{document}
