@@ -1,0 +1,228 @@
+\documentclass[UTF8,12pt,AutoFakeBold]{ctexart}
+
+\usepackage{geometry}%排版
+
+%%%%%%%%%%%%数学%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}%公式
+\usepackage{amsthm}%定理环境
+%\usepackage{ntheorem}%定理环境，使用这个会使\maketitle版式出问题
+\usepackage{mathrsfs}
+\usepackage{witharrows}
+
+\numberwithin{equation}{section}%对公式以节{section}为基础进行编号.变成（1.1.1）有chapter才有1.1.1，不然只有section是1.1
+%%\theoremstyle{plain}%定理用latex默认的版式
+%\newtheorem{thm}{Theorem}[section]
+%%\theoremstyle{definition}%定义用definition格式
+%\newtheorem{defn}{Definition}
+%%\theoremstyle{remark}%用remark格式
+%\newtheorem{lemma}[thm]{lemma}
+%\newtheorem{example}{Example}[section]
+%\newtheorem{prop}{命题}[section]   % 定义新的命题环境
+%\usepackage{bm}%加粗
+
+%%%%%%%%%%%%表格%%%%%%%%%%%%
+\usepackage{multirow}%表格列合并宏包，\multirow命令.
+\usepackage{tabularx}%表格等宽，\begin{tabularx}命令.
+	
+	%%%%%%%%%%%%图片%%%%%%%%%%%%	
+	\usepackage{graphicx}
+	\usepackage{float}
+	\usepackage{subfigure} %插入多图时用子图显示的宏包
+	
+	%%%%%%%%%%%%算法%%%%%%%%%%%%
+	%\usepackage{algorithm,algorithmic}%算法
+	\usepackage{algorithm}
+	%\usepackage{algorithmic}
+	\usepackage{algpseudocode}
+	
+	%%%%%%%%%%%%代码%%%%%%%%%%%%	
+	%\usepackage{minted}
+	
+	%%%%%%%%%%%%盒子%%%%%%%%%%%%%
+	%main
+	\usepackage{varwidth}
+	\usepackage{tikz}
+	\usetikzlibrary{calc} % 引入 calc 库以使用高级坐标计算
+	%\usepackage{xeCJK}
+	\usepackage[most]{tcolorbox}
+	\tcbuselibrary{xparse,hooks,skins,breakable}
+	\tcbuselibrary{listings}
+	\usepackage{fontawesome}
+	\usepackage{mdframed}
+	\usepackage{xcolor}	
+	\input{box.tex}	
+	%\usepackage[many]{tcolorbox}
+	\input{Colortheorem.tex}	
+	
+	\definecolor{citecolor}{RGB}{60,120,216}
+	\definecolor{urlcolor}{RGB}{60,120,216}
+	\definecolor{linkcolor}{RGB}{60,120,216}
+	
+	\usepackage{hyperref}%可以生成pdf书签，可以跳转
+	\hypersetup{
+		colorlinks=true,%引用部分会显示颜色
+		linkcolor=linkcolor, %
+		urlcolor=urlcolor,%
+		allcolors=blue,
+		citecolor=citecolor,
+		pdftitle={Measure Theory},%这个命令会使用pdf阅读器打开时左上角显示这个内容
+	}
+	
+	
+	%\tcbuselibrary{skins, breakable}% 支持文本框跨页
+	
+	%%%%%%%%%%%%参考文献%%%%%%%%%%%%%
+	\usepackage[round]{natbib}
+	\bibliographystyle{unsrtnat}
+	%%%%%%%%%%%%其他%%%%%%%%%%%%%
+	\usepackage[english]{babel}% 载入美式英语断字模板
+	\usepackage{caption}
+	
+	
+	\usepackage{marginnote}
+	%\usepackage{xcolor} % 用于颜色设置
+	\usepackage{lipsum} % 生成示例文本
+	\usepackage{ifthen} % 提供条件判断命令
+	\usepackage{graphicx}
+	
+	% 定义边注颜色
+	\definecolor{mynotecolor}{rgb}{0.6, 0.4, 0.2} % 棕色
+	
+	\newcommand{\mymarginnote}[1]{
+		\ifthenelse{\isodd{\value{page}}}
+		{\normalmarginpar\marginnote{\textcolor{mynotecolor}{#1}}} % 奇数页的边注
+		{\reversemarginpar\marginnote{\textcolor{mynotecolor}{#1}}} % 偶数页的边注
+	}
+	
+	%opening
+	\title{Measure Theory}
+	\author{R.H. Wang}
+	\date{}
+	\begin{document}
+	\kaishu
+	\maketitle
+	
+	\vspace{1cm}
+	\tableofcontents
+	
+	\newpage
+	\kaishu
+	\section{基本概念回顾}
+	\subsection{Sets}
+	
+	\section{测度空间}
+	
+	\begin{definition}[测度]
+		测度是定义在某个集合上的一个函数，它赋予集合一个非负实数（或$\infty$），用以表示该集合的“大小”. 一个函数 $\mu$ 被称为测度，如果它满足以下条件：
+		\begin{enumerate}
+			\item \textbf{非负性：}对于任何集合 $A$，测度满足 $\mu(A) \geq 0$.
+			\item \textbf{空集的测度为零：}$\mu(\emptyset) = 0$.
+			\item \textbf{可数可加性（$\sigma$-加性）}：\\
+			如果 $\{A_i\}_{i=1}^\infty$ 是一系列两两不相交的集合，则
+			\[
+			\mu\left(\bigcup_{i=1}^\infty A_i\right) = \sum_{i=1}^\infty \mu(A_i).
+			\]
+		\end{enumerate}
+		
+	\end{definition}
+	
+	\subsection{$\sigma$代数}
+	\begin{definition}[$\sigma$-代数（Sigma Algebra）]
+		$\sigma$-代数是一个集合族，它对于补集和可数并集封闭，具体来说，一个集合族 $\mathcal{F}$ 是 $\sigma$-代数，满足以下条件：
+		\begin{enumerate}
+			\item \textbf{包含全集：} 如果集合 $X$ 是全集，那么 $X \in \mathcal{F}$.
+			\item \textbf{封闭性对于补集:}如果 $A \in \mathcal{F}$，则其补集 $A^c = X \setminus A \in \mathcal{F}$.
+			\item \textbf{封闭性对于可数并集:}如果 $\{A_i\}_{i=1}^\infty \subseteq \mathcal{F}$，则 $\bigcup_{i=1}^\infty A_i \in \mathcal{F}$
+		\end{enumerate}
+		
+	\end{definition}
+	
+
+	
+	\begin{example}	以下是一些关于$\sigma$-代数的例子：\\
+
+		\begin{enumerate}
+			\item \textbf{最小的$\sigma$-代数（平凡$\sigma$-代数）:}\\
+			在任何集合 $X$ 上，$\{\emptyset, X\}$ 是最简单的 $\sigma$-代数，只包含空集和全集.
+			\item \textbf{最大的$\sigma$-代数（离散$\sigma$-代数）:}\\
+			在集合 $X$ 上，$2^X$（$X$ 的幂集，包含 $X$ 的所有子集）是一个 $\sigma$-代数，称为离散 $\sigma$-代数.
+			\item \textbf{Borel $\sigma$-代数:}\\
+			在 $\mathbb{R}$ 上，由所有开区间 $(a, b)$ 生成的 $\sigma$-代数是 Borel $\sigma$-代数，记为 $\mathcal{B}(\mathbb{R})$. 它包含所有开集、闭集、可数并和交的集合等.
+			\item \textbf{ Lebesgue $\sigma$-代数：}
+			在 $\mathbb{R}$ 上，Lebesgue $\sigma$-代数是由 Borel $\sigma$-代数通过添加所有测度为零的集合（Lebesgue 测度）得到的 $\sigma$-代数.
+		\end{enumerate}
+	\end{example}
+
+	\subsection{Borel $\sigma$-代数}
+	\begin{definition}
+		设 $M$ 是一个集合，定义在某个基础集合 $X$ 上. 由 $M$ 生成的 $\sigma$-代数，记为 $\sigma(M)$，是包含 $M$ 的所有 $\sigma$-代数的交集. 形式上，这可以描述为：
+		
+		\[
+		\sigma(M) = \bigcap \{\mathcal{F} \mid \mathcal{F} \text{ 是包含 } M \text{ 的 }\sigma\text{-代数, 定义在 } X \text{ 上}\}
+		\]
+		
+		这意味着 $\sigma(M)$ 是最小的 $\sigma$-代数，包含集合 $M$，并且满足 $\sigma$-代数的三个基本条件：包含全集 $X$，对于补集封闭，以及对于可数并集封闭.
+	\end{definition}
+	
+	
+	\begin{ascolorbox1}[过程]{如何生成 $\sigma$-代数}
+		生成 $\sigma$-代数的过程涉及以下步骤：
+		\begin{enumerate}
+			\item  \textbf{包含 $M$：}首先，确保所有在 $M$ 中的集合都包含在 $\sigma$-代数中.
+			\item \textbf{ 包含补集：}对于 $\sigma(M)$ 中的每个集合 $A$，其补集 $X \setminus A$ 也必须包含在 $\sigma(M)$ 中.
+			\item \textbf{ 包含可数并：}对于 $\sigma(M)$ 中的任何可数集合序列 $\{A_i\}_{i=1}^\infty$，其并集 $\bigcup_{i=1}^\infty A_i$ 也必须包含在 $\sigma(M)$ 中.
+			\item \textbf{ 最小性：}$\sigma(M)$ 必须是所有满足以上条件的 $\sigma$-代数中最小的一个，即任何包含 $M$ 并满足 $\sigma$-代数定义的集合系统都必须包含 $\sigma(M)$.
+		\end{enumerate}
+	\end{ascolorbox1}
+	
+	
+	\begin{example}这里展示生成 $\sigma$-代数的一些例子:
+		\begin{enumerate}
+			\item \textbf{单点集合的生成 $\sigma$-代数}
+			\begin{itemize}
+				\item 设 $X = \mathbb{R}$，$M = \{ \{0\} \}$，即 $M$ 只包含实数线上的单点集合 $\{0\}$
+				\item 生成的 $\sigma$-代数 $\sigma(M)$ 将包括 $\{0\}$ 的所有可能的可数并集和补集，这些包括所有包含0或不包含0的集合，例如 $\mathbb{R} \setminus \{0\}$，$\{0\}$，$\emptyset$ 和 $\mathbb{R}$.
+			\end{itemize}
+			\item \textbf{开区间的生成 $\sigma$-代数（Borel $\sigma$-代数）}
+			\begin{itemize}
+				\item 设 $X = \mathbb{R}$，$M = \{(a, b) : a < b\}$，包含 $\mathbb{R}$ 上的所有开区间
+				\item 生成的 $\sigma$-代数 $\sigma(M)$ 是实数线上的 Borel $\sigma$-代数 $\mathcal{B}(\mathbb{R})$，包括所有开集、闭集、$G_\delta$ 集（开集的可数交）、$F_\sigma$ 集（闭集的可数并）等
+			\end{itemize}
+		\end{enumerate}
+		通过这些步骤和例子，我们看到生成 $\sigma$-代数是构建测度理论和概率论模型的基础过程，为我们提供了一种系统化地处理集合操作的方法，保证了数学模型的严密性和完整性.
+	\end{example}
+	
+	\begin{definition}[Borel $\sigma$-代数]
+		Borel $\sigma$-代数 $\mathcal{B}(\mathbb{R})$ 是在拓扑空间（如实数 $\mathbb{R}$）上所有开集通过可数并、可数交和补集操作生成的最小 $\sigma$-代数. 即：
+		\[
+		\mathcal{B}(\mathbb{R}) = \sigma(\text{所有开区间 } (a, b))
+		\]
+	\end{definition}
+
+
+	\begin{example}这里列举Borel $\sigma$-代数的例子：\\
+		在实数线 $\mathbb{R}$ 上的例子:
+		\begin{enumerate}
+			\item $\mathcal{B}(\mathbb{R})$ 包括所有单点集合，因为每个单点可以表示为开区间的可数交.
+			\item 它包含所有实数线上的开集和闭集.
+			\item 它还包括所有 $G_\delta$ 集和 $F_\sigma$ 集，这些集合分别是开集的可数交和闭集的可数并.
+		\end{enumerate}
+		
+	\end{example}
+
+	\begin{ascolorbox8}{应用}
+		在实数 $\mathbb{R}^n$ 上，Borel $\sigma$-代数可以通过考虑所有形如 $(a_1, b_1) \times \cdots \times (a_n, b_n)$ 的开矩形区间生成. 这表明在 $\mathbb{R}^n$ 上，Borel $\sigma$-代数是由所有开球生成的，因为每个开球都可以用开矩形区间来逼近.
+	\end{ascolorbox8}
+
+	
+	
+	
+	
+	
+	
+	\newpage
+	\bibliography{Reference.bib}	
+
+	\end{document}
