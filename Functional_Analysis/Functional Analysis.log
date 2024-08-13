@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.7.6)  22 APR 2024 12:16
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.7.6)  13 AUG 2024 16:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,7 +6,7 @@ entering extended mode
 (./Functional Analysis.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22>
-(d:/texlive/2023/texmf-dist/tex/latex/ctex/ctexart.cls
+(d:/texlive/2023/texmf-dist/tex/latex/ctex/ctexbook.cls
 (d:/texlive/2023/texmf-dist/tex/latex/ctex/config/ctexbackend.cfg
 File: ctexbackend.cfg 2022/07/14 v2.5.10 Backend configuration file (CTEX)
 )
@@ -21,8 +21,8 @@ File: l3backend-xetex.def 2023-01-16 L3 backend support: XeTeX
 \g__pdf_backend_annotation_int=\count183
 \g__pdf_backend_link_int=\count184
 ))
-Document Class: ctexart 2022/07/14 v2.5.10 Chinese adapter for class article (C
-TEX)
+Document Class: ctexbook 2022/07/14 v2.5.10 Chinese adapter for class book (CTE
+X)
 (d:/texlive/2023/texmf-dist/tex/latex/ctex/ctexhook.sty
 Package: ctexhook 2022/07/14 v2.5.10 Document and package hooks (CTEX)
 )
@@ -45,19 +45,20 @@ LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
 (d:/texlive/2023/texmf-dist/tex/latex/ctex/config/ctexopts.cfg
 File: ctexopts.cfg 2022/07/14 v2.5.10 Option configuration file (CTEX)
 )
-(d:/texlive/2023/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
-(d:/texlive/2023/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+(d:/texlive/2023/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2022/07/02 v1.4n Standard LaTeX document class
+(d:/texlive/2023/texmf-dist/tex/latex/base/bk12.clo
+File: bk12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count188
-\c@section=\count189
-\c@subsection=\count190
-\c@subsubsection=\count191
-\c@paragraph=\count192
-\c@subparagraph=\count193
-\c@figure=\count194
-\c@table=\count195
+\c@chapter=\count189
+\c@section=\count190
+\c@subsection=\count191
+\c@subsubsection=\count192
+\c@paragraph=\count193
+\c@subparagraph=\count194
+\c@figure=\count195
+\c@table=\count196
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen141
@@ -71,17 +72,17 @@ Package: xeCJK 2022/08/05 v3.9.1 Typesetting CJK scripts with XeLaTeX
 (d:/texlive/2023/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty
 Package: xtemplate 2023-02-02 L3 Experimental prototype document functions
 \l__xtemplate_tmp_dim=\dimen142
-\l__xtemplate_tmp_int=\count196
+\l__xtemplate_tmp_int=\count197
 \l__xtemplate_tmp_muskip=\muskip16
 \l__xtemplate_tmp_skip=\skip50
 )
-\l__xeCJK_tmp_int=\count197
+\l__xeCJK_tmp_int=\count198
 \l__xeCJK_tmp_box=\box53
 \l__xeCJK_tmp_dim=\dimen143
 \l__xeCJK_tmp_skip=\skip51
-\g__xeCJK_space_factor_int=\count198
-\l__xeCJK_begin_int=\count199
-\l__xeCJK_end_int=\count266
+\g__xeCJK_space_factor_int=\count199
+\l__xeCJK_begin_int=\count266
+\l__xeCJK_end_int=\count267
 \c__xeCJK_CJK_class_int=\XeTeXcharclass1
 \c__xeCJK_FullLeft_class_int=\XeTeXcharclass2
 \c__xeCJK_FullRight_class_int=\XeTeXcharclass3
@@ -91,8 +92,8 @@ Package: xtemplate 2023-02-02 L3 Experimental prototype document functions
 \c__xeCJK_CM_class_int=\XeTeXcharclass7
 \c__xeCJK_HangulJamo_class_int=\XeTeXcharclass8
 \l__xeCJK_last_skip=\skip52
-\c__xeCJK_none_node=\count267
-\g__xeCJK_node_int=\count268
+\c__xeCJK_none_node=\count268
+\g__xeCJK_node_int=\count269
 \c__xeCJK_CJK_node_dim=\dimen144
 \c__xeCJK_CJK-space_node_dim=\dimen145
 \c__xeCJK_default_node_dim=\dimen146
@@ -103,10 +104,10 @@ Package: xtemplate 2023-02-02 L3 Experimental prototype document functions
 \l__xeCJK_ecglue_skip=\skip55
 \l__xeCJK_punct_kern_skip=\skip56
 \l__xeCJK_indent_box=\box54
-\l__xeCJK_last_penalty_int=\count269
+\l__xeCJK_last_penalty_int=\count270
 \l__xeCJK_last_bound_dim=\dimen149
 \l__xeCJK_last_kern_dim=\dimen150
-\l__xeCJK_widow_penalty_int=\count270
+\l__xeCJK_widow_penalty_int=\count271
 
 Package xtemplate Info: Declaring object type 'xeCJK/punctuation' taking 0
 (xtemplate)             argument(s) on line 2396.
@@ -130,10 +131,10 @@ Package xtemplate Info: Declaring object type 'xeCJK/punctuation' taking 0
 \l__xeCJK_margin_dim=\dimen167
 \l__xeCJK_minimum_bound_dim=\dimen168
 \l__xeCJK_kerning_margin_dim=\dimen169
-\g__xeCJK_family_int=\count271
-\l__xeCJK_fam_int=\count272
-\g__xeCJK_fam_allocation_int=\count273
-\l__xeCJK_verb_case_int=\count274
+\g__xeCJK_family_int=\count272
+\l__xeCJK_fam_int=\count273
+\g__xeCJK_fam_allocation_int=\count274
+\l__xeCJK_verb_case_int=\count275
 \l__xeCJK_verb_exspace_skip=\skip57
 
 (d:/texlive/2023/texmf-dist/tex/latex/fontspec/fontspec.sty
@@ -145,17 +146,17 @@ Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
 (d:/texlive/2023/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count275
-\l__fontspec_language_int=\count276
-\l__fontspec_strnum_int=\count277
-\l__fontspec_tmp_int=\count278
-\l__fontspec_tmpa_int=\count279
-\l__fontspec_tmpb_int=\count280
-\l__fontspec_tmpc_int=\count281
-\l__fontspec_em_int=\count282
-\l__fontspec_emdef_int=\count283
-\l__fontspec_strong_int=\count284
-\l__fontspec_strongdef_int=\count285
+\l__fontspec_script_int=\count276
+\l__fontspec_language_int=\count277
+\l__fontspec_strnum_int=\count278
+\l__fontspec_tmp_int=\count279
+\l__fontspec_tmpa_int=\count280
+\l__fontspec_tmpb_int=\count281
+\l__fontspec_tmpc_int=\count282
+\l__fontspec_em_int=\count283
+\l__fontspec_emdef_int=\count284
+\l__fontspec_strong_int=\count285
+\l__fontspec_strongdef_int=\count286
 \l__fontspec_tmpa_dim=\dimen170
 \l__fontspec_tmpb_dim=\dimen171
 \l__fontspec_tmpc_dim=\dimen172
@@ -174,19 +175,19 @@ File: xeCJK.cfg 2022/08/05 v3.9.1 Configuration file for xeCJK package
 
 (d:/texlive/2023/texmf-dist/tex/latex/zhnumber/zhnumber.sty
 Package: zhnumber 2022/07/14 v3.0 Typesetting numbers with Chinese glyphs
-\l__zhnum_scale_int=\count286
-\l__zhnum_tmp_int=\count287
+\l__zhnum_scale_int=\count287
+\l__zhnum_tmp_int=\count288
 
 (d:/texlive/2023/texmf-dist/tex/latex/zhnumber/zhnumber-utf8.cfg
 File: zhnumber-utf8.cfg 2022/07/14 v3.0 Chinese numerals with UTF8 encoding
 ))
 \l__ctex_heading_skip=\skip59
 
-(d:/texlive/2023/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese-article.d
-ef
-File: ctex-scheme-chinese-article.def 2022/07/14 v2.5.10 Chinese scheme for art
-icle (CTEX)
- (d:/texlive/2023/texmf-dist/tex/latex/ctex/config/ctex-name-utf8.cfg
+(d:/texlive/2023/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese-book.def
+File: ctex-scheme-chinese-book.def 2022/07/14 v2.5.10 Chinese scheme for book (
+CTEX)
+
+(d:/texlive/2023/texmf-dist/tex/latex/ctex/config/ctex-name-utf8.cfg
 File: ctex-name-utf8.cfg 2022/07/14 v2.5.10 Caption with encoding UTF-8 (CTEX)
 ))
 (d:/texlive/2023/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-windows.def
@@ -239,9 +240,9 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 (d:/texlive/2023/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
-\Gm@cnth=\count288
-\Gm@cntv=\count289
-\c@Gm@tempcnt=\count290
+\Gm@cnth=\count289
+\Gm@cntv=\count290
+\c@Gm@tempcnt=\count291
 \Gm@bindingoffset=\dimen175
 \Gm@wd@mp=\dimen176
 \Gm@odd@mp=\dimen177
@@ -272,14 +273,14 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (d:/texlive/2023/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count291
+\inf@bad=\count292
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count292
-\leftroot@=\count293
+\uproot@=\count293
+\leftroot@=\count294
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count294
-\DOTSCASE@=\count295
+\classnum@=\count295
+\DOTSCASE@=\count296
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -292,20 +293,20 @@ LaTeX Info: Redefining \Bigg on input line 725.
 \big@size=\dimen185
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count296
+\macc@depth=\count297
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count297
+\c@MaxMatrixCols=\count298
 \dotsspace@=\muskip17
-\c@parentequation=\count298
-\dspbrk@lvl=\count299
+\c@parentequation=\count299
+\dspbrk@lvl=\count300
 \tag@help=\toks19
-\row@=\count300
-\column@=\count301
-\maxfields@=\count302
+\row@=\count301
+\column@=\count302
+\maxfields@=\count303
 \andhelp@=\toks20
 \eqnshift@=\dimen186
 \alignsep@=\dimen187
@@ -410,14 +411,14 @@ de.tex
 \pgf@yd=\dimen261
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count303
-\c@pgf@countb=\count304
-\c@pgf@countc=\count305
-\c@pgf@countd=\count306
+\c@pgf@counta=\count304
+\c@pgf@countb=\count305
+\c@pgf@countc=\count306
+\c@pgf@countd=\count307
 \t@pgf@toka=\toks33
 \t@pgf@tokb=\toks34
 \t@pgf@tokc=\toks35
-\pgf@sys@id@count=\count307
+\pgf@sys@id@count=\count308
  (d:/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
@@ -432,12 +433,12 @@ File: pgfsys-dvipdfmx.def 2023-01-15 v3.1.10 (3.1.10)
 (d:/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 )
-\pgfsys@objnum=\count308
+\pgfsys@objnum=\count309
 )))
 (d:/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count309
-\pgfsyssoftpath@bigbuffer@items=\count310
+\pgfsyssoftpath@smallbuffer@items=\count310
+\pgfsyssoftpath@bigbuffer@items=\count311
 )
 (d:/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
@@ -466,7 +467,7 @@ Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
 (d:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (d:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen262
-\pgfmath@count=\count311
+\pgfmath@count=\count312
 \pgfmath@box=\box58
 \pgfmath@toks=\toks36
 \pgfmath@stack@operand=\toks37
@@ -491,7 +492,7 @@ x)
 etics.code.tex)
 (d:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
 (d:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count312
+\c@pgfmathroundto@lastzeros=\count313
 ))
 (d:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (d:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
@@ -528,7 +529,7 @@ File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfpic=\box59
 \pgf@hbox=\box60
 \pgf@layerbox@main=\box61
-\pgf@picture@serial@count=\count313
+\pgf@picture@serial@count=\count314
 )
 (d:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code
 .tex
@@ -559,8 +560,8 @@ File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (d:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@max=\dimen286
-\pgf@sys@shading@range@num=\count314
-\pgf@shadingcount=\count315
+\pgf@sys@shading@range@num=\count315
+\pgf@shadingcount=\count316
 )
 (d:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
@@ -614,7 +615,7 @@ Package: tikz 2023-01-15 v3.1.10 (3.1.10)
 (d:/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.co
 de.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count316
+\pgf@plot@mark@count=\count317
 \pgfplotmarksize=\dimen291
 )
 \tikz@lastx=\dimen292
@@ -629,18 +630,18 @@ File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@figbox@bg=\box65
 \tikz@tempbox=\box66
 \tikz@tempbox@bg=\box67
-\tikztreelevel=\count317
-\tikznumberofchildren=\count318
-\tikznumberofcurrentchild=\count319
-\tikz@fig@count=\count320
+\tikztreelevel=\count318
+\tikznumberofchildren=\count319
+\tikznumberofcurrentchild=\count320
+\tikz@fig@count=\count321
 
 (d:/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count321
-\pgfmatrixcurrentcolumn=\count322
-\pgf@matrix@numberofcolumns=\count323
+\pgfmatrixcurrentrow=\count322
+\pgfmatrixcurrentcolumn=\count323
+\pgf@matrix@numberofcolumns=\count324
 )
-\tikz@expandcount=\count324
+\tikz@expandcount=\count325
 
 (d:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 brarytopaths.code.tex
@@ -684,18 +685,18 @@ Package: witharrows 2023/02/14 v2.8a Draws arrows for explanations on the right
  (d:/texlive/2023/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box68
-\sift@deathcycles=\count325
+\sift@deathcycles=\count326
 \@vwid@loff=\dimen311
 \@vwid@roff=\dimen312
 )
-\g__witharrows_last_env_int=\count326
-\l__witharrows_pos_env_int=\count327
-\l__witharrows_pos_arrow_int=\count328
-\g__witharrows_arrow_int=\count329
-\g__witharrows_line_int=\count330
-\g__witharrows_col_int=\count331
-\g__witharrows_static_col_int=\count332
-\l__witharrows_nb_cols_int=\count333
+\g__witharrows_last_env_int=\count327
+\l__witharrows_pos_env_int=\count328
+\l__witharrows_pos_arrow_int=\count329
+\g__witharrows_arrow_int=\count330
+\g__witharrows_line_int=\count331
+\g__witharrows_col_int=\count332
+\g__witharrows_static_col_int=\count333
+\l__witharrows_nb_cols_int=\count334
 \l__witharrows_arrow_width_dim=\dimen313
 \l__witharrows_up_and_down_radius_dim=\dimen314
 \l__witharrows_xoffset_for_o_arrows_dim=\dimen315
@@ -711,7 +712,7 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 (d:/texlive/2023/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip68
-\multirow@cntb=\count334
+\multirow@cntb=\count335
 \multirow@dima=\skip69
 \bigstrutjot=\dimen322
 )
@@ -733,12 +734,12 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \TX@old@col=\dimen327
 \TX@target=\dimen328
 \TX@delta=\dimen329
-\TX@cols=\count335
+\TX@cols=\count336
 \TX@ftn=\toks42
 )
 (d:/texlive/2023/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count336
+\c@float@type=\count337
 \float@exts=\toks43
 \float@box=\box71
 \@float@everytoks=\toks44
@@ -752,10 +753,10 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigbottomskip=\skip74
 \subfigcapmargin=\dimen331
 \subfiglabelskip=\skip75
-\c@subfigure=\count337
-\c@lofdepth=\count338
-\c@subtable=\count339
-\c@lotdepth=\count340
+\c@subfigure=\count338
+\c@lofdepth=\count339
+\c@subtable=\count340
+\c@lotdepth=\count341
 
 ****************************************
 * Local config file subfigure.cfg used *
@@ -773,7 +774,7 @@ nment
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks45
-\c@algorithm=\count341
+\c@algorithm=\count342
 )
 (d:/texlive/2023/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
@@ -782,15 +783,15 @@ Package: algpseudocode
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count342
-\c@ALG@rem=\count343
-\c@ALG@nested=\count344
+\c@ALG@line=\count343
+\c@ALG@rem=\count344
+\c@ALG@nested=\count345
 \ALG@tlm=\skip78
 \ALG@thistlm=\skip79
-\c@ALG@Lnr=\count345
-\c@ALG@blocknr=\count346
-\c@ALG@storecount=\count347
-\c@ALG@tmpcounter=\count348
+\c@ALG@Lnr=\count346
+\c@ALG@blocknr=\count347
+\c@ALG@storecount=\count348
+\c@ALG@tmpcounter=\count349
 \ALG@tmplength=\skip80
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
@@ -816,15 +817,15 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
 (d:/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count349
+\etb@tempcnta=\count350
 )
 \tcb@titlebox=\box73
 \tcb@upperbox=\box74
 \tcb@lowerbox=\box75
 \tcb@phantombox=\box76
-\c@tcbbreakpart=\count350
-\c@tcblayer=\count351
-\c@tcolorbox@number=\count352
+\c@tcbbreakpart=\count351
+\c@tcblayer=\count352
+\c@tcolorbox@number=\count353
 \tcb@temp=\box77
 \tcb@temp=\box78
 \tcb@temp=\box79
@@ -832,10 +833,10 @@ Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 
 (d:/texlive/2023/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
 Library (tcolorbox): 'tcbraster.code.tex' version '6.0.1'
-\c@tcbrastercolumn=\count353
-\c@tcbrasterrow=\count354
-\c@tcbrasternum=\count355
-\c@tcbraster=\count356
+\c@tcbrastercolumn=\count354
+\c@tcbrasterrow=\count355
+\c@tcbrasternum=\count356
+\c@tcbraster=\count357
 ) (d:/texlive/2023/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
 Library (tcolorbox): 'tcbskins.code.tex' version '6.0.1'
 (d:/texlive/2023/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty
@@ -876,29 +877,29 @@ Library (tcolorbox): 'tcbfitting.code.tex' version '6.0.1'
 \tcbfitdim=\dimen332
 \tcb@lowerfitdim=\dimen333
 \tcb@upperfitdim=\dimen334
-\tcb@cur@hbadness=\count357
+\tcb@cur@hbadness=\count358
 ) (d:/texlive/2023/texmf-dist/tex/latex/tcolorbox/tcblistingsutf8.code.tex
 Library (tcolorbox): 'tcblistingsutf8.code.tex' version '6.0.1'
 (d:/texlive/2023/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
 Library (tcolorbox): 'tcblistings.code.tex' version '6.0.1'
 (d:/texlive/2023/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count358
+\lst@mode=\count359
 \lst@gtempboxa=\box85
 \lst@token=\toks48
-\lst@length=\count359
+\lst@length=\count360
 \lst@currlwidth=\dimen335
-\lst@column=\count360
-\lst@pos=\count361
+\lst@column=\count361
+\lst@pos=\count362
 \lst@lostspace=\dimen336
 \lst@width=\dimen337
-\lst@newlines=\count362
-\lst@lineno=\count363
+\lst@newlines=\count363
+\lst@lineno=\count364
 \lst@maxwidth=\dimen338
 
 (d:/texlive/2023/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-\c@lstnumber=\count364
-\lst@skipnumbers=\count365
+\c@lstnumber=\count365
+\lst@skipnumbers=\count366
 \lst@framebox=\box86
 )
 (d:/texlive/2023/texmf-dist/tex/latex/listings/listings.cfg
@@ -908,8 +909,8 @@ Package: listings 2023/02/27 1.9 (Carsten Heinz)
 
 (d:/texlive/2023/texmf-dist/tex/xelatex/xecjk/xeCJK-listings.sty
 Package: xeCJK-listings 2022/08/05 v3.9.1 xeCJK patch file for listings
-\l__xeCJK_listings_max_char_int=\count366
-\l__xeCJK_listings_flag_int=\count367
+\l__xeCJK_listings_max_char_int=\count367
+\l__xeCJK_listings_flag_int=\count368
 )
 (d:/texlive/2023/texmf-dist/tex/latex/tcolorbox/tcblistingscore.code.tex
 Library (tcolorbox): 'tcblistingscore.code.tex' version '6.0.1'
@@ -926,7 +927,7 @@ Package pdftexcmds Info: \pdfdraftmode not found.
 Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
 Package shellesc Info: Restricted shell escape enabled on input line 77.
 ))
-\c@tcblisting=\count368
+\c@tcblisting=\count369
 ))
 Package tcolorbox Info: Library `listingsutf8' is compatible with pdftex only. 
 Library `listings` is loaded instead. on input line 29.
@@ -1017,14 +1018,14 @@ Package zref Info: New property: page on input line 769.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\c@abspage=\count369
+\c@abspage=\count370
 Package zref Info: New property: abspage on input line 65.
 )
 (d:/texlive/2023/texmf-dist/tex/latex/needspace/needspace.sty
 Package: needspace 2010/09/12 v1.3d reserve vertical space
 )
 \mdf@templength=\skip81
-\c@mdf@globalstyle@cnt=\count370
+\c@mdf@globalstyle@cnt=\count371
 \mdf@skipabove@length=\skip82
 \mdf@skipbelow@length=\skip83
 \mdf@leftmargin@length=\skip84
@@ -1100,35 +1101,35 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \mdf@horizontalspaceofbox=\skip145
 \mdfsubtitleheight=\skip146
 \mdfsubsubtitleheight=\skip147
-\c@mdfcountframes=\count371
+\c@mdfcountframes=\count372
 
 ****** mdframed patching \endmdf@trivlist
 
 ****** -- success******
 
-\mdf@envdepth=\count372
-\c@mdf@env@i=\count373
-\c@mdf@env@ii=\count374
-\c@mdf@zref@counter=\count375
+\mdf@envdepth=\count373
+\c@mdf@env@i=\count374
+\c@mdf@env@ii=\count375
+\c@mdf@zref@counter=\count376
 Package zref Info: New property: mdf@pagevalue on input line 895.
 ) (./box.tex
-\c@question=\count376
+\c@question=\count377
 )
 (./Colortheorem.tex
-\c@theorem=\count377
-\c@postulate=\count378
-\c@conjecture=\count379
-\c@corollary=\count380
-\c@lemma=\count381
-\c@conclusion=\count382
-\c@definition=\count383
-\c@review=\count384
-\c@example=\count385
-\c@remark=\count386
-\c@note=\count387
-\c@property=\count388
-\c@proposition=\count389
-\c@formula=\count390
+\c@theorem=\count378
+\c@postulate=\count379
+\c@conjecture=\count380
+\c@corollary=\count381
+\c@lemma=\count382
+\c@conclusion=\count383
+\c@definition=\count384
+\c@review=\count385
+\c@example=\count386
+\c@remark=\count387
+\c@note=\count388
+\c@property=\count389
+\c@proposition=\count390
+\c@formula=\count391
 )
 (d:/texlive/2023/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2023-02-07 v7.00v Hypertext links for LaTeX
@@ -1151,11 +1152,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (d:/texlive/2023/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count391
+\c@section@level=\count392
 )
 \@linkdim=\dimen339
-\Hy@linkcounter=\count392
-\Hy@pagecounter=\count393
+\Hy@linkcounter=\count393
+\Hy@pagecounter=\count394
 
 (d:/texlive/2023/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2023-02-07 v7.00v Hyperref: PDFDocEncoding definition (HO)
@@ -1163,7 +1164,7 @@ File: pd1enc.def 2023-02-07 v7.00v Hyperref: PDFDocEncoding definition (HO)
 (d:/texlive/2023/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count394
+\Hy@SavedSpaceFactor=\count395
 
 (d:/texlive/2023/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2023-02-07 v7.00v Hyperref: PDF Unicode definition (HO)
@@ -1176,7 +1177,7 @@ Package hyperref Info: Plain pages OFF on input line 4192.
 Package hyperref Info: Backreferencing OFF on input line 4197.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4425.
-\c@Hy@tempcnt=\count395
+\c@Hy@tempcnt=\count396
 
 (d:/texlive/2023/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
@@ -1192,7 +1193,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count396
+\Fld@menulength=\count397
 \Field@Width=\dimen341
 \Fld@charsize=\dimen342
 Package hyperref Info: Hyper figures OFF on input line 6042.
@@ -1202,9 +1203,9 @@ Package hyperref Info: backreferencing OFF on input line 6057.
 Package hyperref Info: Link coloring OFF on input line 6062.
 Package hyperref Info: Link coloring with OCG OFF on input line 6067.
 Package hyperref Info: PDF/A mode OFF on input line 6072.
-\Hy@abspage=\count397
-\c@Item=\count398
-\c@Hfootnote=\count399
+\Hy@abspage=\count398
+\c@Item=\count399
+\c@Hfootnote=\count400
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 
@@ -1216,10 +1217,10 @@ Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
 \pdfm@box=\box92
-\c@Hy@AnnotLevel=\count400
-\HyField@AnnotCount=\count401
-\Fld@listcount=\count402
-\c@bookmark@seq@number=\count403
+\c@Hy@AnnotLevel=\count401
+\HyField@AnnotCount=\count402
+\Fld@listcount=\count403
+\c@bookmark@seq@number=\count404
 
 (d:/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
@@ -1244,17 +1245,17 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip149
 \bibsep=\skip150
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count404
+\c@NAT@ctr=\count405
 )
 (d:/texlive/2023/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2023/02/13 3.86 The Babel package
-\babel@savecnt=\count405
+\babel@savecnt=\count406
 \U@D=\dimen343
 \l@unhyphenated=\language87
 
 (d:/texlive/2023/texmf-dist/tex/generic/babel/xebabel.def)
 \bbl@readstream=\read4
-\bbl@dirlevel=\count406
+\bbl@dirlevel=\count407
 
 (d:/texlive/2023/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
@@ -1284,8 +1285,8 @@ Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
 \caption@hangindent=\dimen351
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count407
-\c@continuedfloat=\count408
+\c@caption@flags=\count408
+\c@continuedfloat=\count409
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
@@ -1293,13 +1294,13 @@ Package caption Info: subfigure package is loaded.
 )
 (d:/texlive/2023/texmf-dist/tex/latex/marginnote/marginnote.sty
 Package: marginnote 2018/08/09 v1.4b non floating margin notes for LaTeX
-\c@mn@abspage=\count409
+\c@mn@abspage=\count410
 )
 (d:/texlive/2023/texmf-dist/tex/latex/lipsum/lipsum.sty
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
-\g__lipsum_par_int=\count410
-\l__lipsum_a_int=\count411
-\l__lipsum_b_int=\count412
+\g__lipsum_par_int=\count411
+\l__lipsum_a_int=\count412
+\l__lipsum_b_int=\count413
 
 (d:/texlive/2023/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
 (./Functional Analysis.aux)
@@ -1390,34 +1391,34 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
-* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
+* modes: twoside 
+* h-part:(L,W,R)=(73.71613pt, 430.00462pt, 110.57425pt)
 * v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
 * \textwidth=430.00462pt
 * \textheight=556.47656pt
-* \oddsidemargin=19.8752pt
-* \evensidemargin=19.8752pt
-* \topmargin=-13.87262pt
+* \oddsidemargin=1.44614pt
+* \evensidemargin=38.30426pt
+* \topmargin=-8.74641pt
 * \headheight=12.0pt
-* \headsep=25.0pt
+* \headsep=19.8738pt
 * \topskip=12.0pt
 * \footskip=30.0pt
-* \marginparwidth=44.0pt
-* \marginparsep=10.0pt
+* \marginparwidth=98.0pt
+* \marginparsep=7.0pt
 * \columnsep=10.0pt
 * \skip\footins=10.8pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
 * \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
+* \@twosidetrue
+* \@mparswitchtrue
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count413
+\c@lstlisting=\count414
 Package hyperref Info: Link coloring ON on input line 103.
 (./Functional Analysis.out) (./Functional Analysis.out)
 \@outlinefile=\write4
@@ -1468,28 +1469,41 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 10
 
 (d:/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
+) [1
+
+
+] [2
+
+]
 (./Functional Analysis.toc)
 \tf@toc=\write5
 \openout5 = `"Functional Analysis.toc"'.
 
- [1
+ [3] [4
 
-] [2] (./Functional Analysis.bbl
+]
+第一章
+[5] (./Functional Analysis.bbl
+LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <12> not available
+(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 
+1.
+ [6
+
+]
 
 Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
-) [3] (./Functional Analysis.aux)
+) [7] (./Functional Analysis.aux)
 Package rerunfilecheck Info: File `"Functional Analysis".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 41311 strings out of 476683
- 906575 string characters out of 5807576
- 1850012 words of memory out of 5000000
- 60865 multiletter control sequences out of 15000+600000
- 517576 words of font info for 73 fonts, out of 8000000 for 9000
+ 41568 strings out of 476683
+ 915447 string characters out of 5807576
+ 1851012 words of memory out of 5000000
+ 61101 multiletter control sequences out of 15000+600000
+ 522795 words of font info for 104 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 115i,6n,118p,484b,351s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 115i,6n,118p,498b,369s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Functional Analysis.pdf (3 pages).
+Output written on Functional Analysis.pdf (7 pages).

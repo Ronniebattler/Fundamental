@@ -1,140 +1,195 @@
-\documentclass[UTF8,12pt]{ctexart}
-%加载包
-\usepackage{geometry}%排版
-%a4版面，页边距1英寸,showframe 增加边框的参数。
-% 设置为A4纸，边距适中模式（永中office）
-\geometry{%
-	width = 210mm,%
-	height = 297mm,
-	left = 19.1mm,%
-	right = 19.1mm,%
-	top = 25.4mm,%
-	bottom = 25.4mm%
-}
-%\hyphenpenalty = 1000% 断字设置，值越大，断字越少。
-%\setlength{\parindent}{2em}% 缩进
-%\setlength{\parskip}{0.5ex} % 段间距
+\documentclass[UTF8,12pt,AutoFakeBold]{ctexbook}
 
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}%公式
-\usepackage{amsthm}%定理环境
-
-%\usepackage{ntheorem}%定理环境，使用这个会使\maketitle版式出问题
-\usepackage{bm}%加粗
-
-\usepackage{mathrsfs}
-\numberwithin{equation}{section}%对公式以节{section}为基础进行编号.变成（1.1.1）有chapter才有1.1.1，不然只有section是1.1
-%\theoremstyle{plain}%定理用latex默认的版式
-\newtheorem{thm}{Theorem}[section]
-%\theoremstyle{definition}%定义用definition格式
-\newtheorem{defn}{Definition}
-%\theoremstyle{remark}%用remark格式
-\newtheorem{lemma}[thm]{lemma}
-\newtheorem{example}{Example}[section]
-\newtheorem{axiom}{Axiom}[section]
-
-
-\usepackage{multirow}%表格列合并宏包，\multirow命令.
-
-\usepackage{tabularx}%表格等宽，\begin{tabularx}命令.
-
-\usepackage{tcolorbox}%盒子
-\tcbuselibrary{skins, breakable}% 支持文本框跨页
-\usepackage[english]{babel}% 载入美式英语断字模板
-
-\usepackage{graphicx}
-
-\usepackage{float}
-
-\usepackage{listings}   %代码块
-\usepackage{xcolor}
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
-%设置代码块
-\lstdefinestyle{mystyle}{
-	backgroundcolor=\color{backcolour},   
-	commentstyle=\color{codegreen},
-	keywordstyle=\color{magenta},
-	numberstyle=\tiny\color{codegray},
-	stringstyle=\color{codepurple},
-	basicstyle=\ttfamily\footnotesize,
-	breakatwhitespace=false,         
-	breaklines=true,                 
-	captionpos=b,                    
-	keepspaces=true,                 
-	numbers=left,                    
-	numbersep=5pt,                  
-	showspaces=false,                
-	showstringspaces=false,
-	showtabs=false,                  
-	tabsize=2
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={170mm,257mm}, %设置页面尺寸
+	left=25mm,
+	right=25mm, %奇偶页边距一致
+	top=20mm,
+	bottom=20mm
 }
 
-\lstset{style=mystyle,
-	language=R,                                       % 设置语言
-}
+\usepackage{titlesec}
+%改变章节标题样式
+\titleformat{\chapter}[block]
+{\normalfont\huge\bfseries}{Chapter \thechapter:}{1em}{}
 
-\usepackage{appendix}%附录
+%%%%%%%%%%%%数学%%%%%%%%%%%%%%%%
+\usepackage{amsmath, amsfonts, amssymb, amsthm, mathrsfs}
+\usepackage{witharrows}
+\usepackage{enumitem}
+\numberwithin{equation}{section}
 
+%%%%%%%%%%%%表格%%%%%%%%%%%%
+\usepackage{multirow, tabularx}
 
-%标题页
-\title{Notes of Real Analysis}
-\author{Renhe W.}
-\date{ }
-\usepackage{hyperref}%可以生成pdf书签，可以跳转
+%%%%%%%%%%%%图片%%%%%%%%%%%%	
+\usepackage{graphicx, float, subfigure}
+
+%%%%%%%%%%%%算法%%%%%%%%%%%%
+\usepackage{algorithm, algpseudocode}
+
+%%%%%%%%%%%%盒子%%%%%%%%%%%%%
+\usepackage{tikz, varwidth, mdframed, xcolor}
+\usetikzlibrary{calc}
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{xparse,hooks,skins,breakable,listings}
+\input{box.tex}
+\input{Colortheorem.tex}
+
+\definecolor{citecolor}{RGB}{60,120,216}
+\definecolor{urlcolor}{RGB}{60,120,216}
+\definecolor{linkcolor}{RGB}{60,120,216}
+
+%%%%%%%%%%%%超链接%%%%%%%%%%%%%
+\usepackage{hyperref}
 \hypersetup{
 	colorlinks=true,
-	linkcolor=black
-}%使得目录没有红框
+	linkcolor=linkcolor,
+	urlcolor=urlcolor,
+	%allcolors=blue,
+	citecolor=cyan,
+	pdftitle={Real Analysis},
+	%linkcolor=blue,
+	filecolor=magenta,      
+	%urlcolor=cyan,
+}
 
-%工具
-%使用文本框
-%\begin{tcolorbox}[enhanced]	\end{tcolorbox}
-%代码框
-%{\setmainfont{Courier New Bold}                       %设置代码字体                   
-%\begin{lstlisting}
-	
-%\end{lstlisting}}
+%%%%%%%%%%%%参考文献%%%%%%%%%%%%%
+\usepackage[round]{natbib}
+\bibliographystyle{unsrtnat}
 
+%%%%%%%%%%%%其他%%%%%%%%%%%%%
+\usepackage[english]{babel}
+\usepackage{caption, marginnote, lipsum, ifthen}
 
+\definecolor{mynotecolor}{rgb}{0.6, 0.4, 0.2}
+\newcommand{\mymarginnote}[1]{
+	\ifthenelse{\isodd{\value{page}}}
+	{\normalmarginpar\marginnote{\textcolor{mynotecolor}{#1}}}
+	{\reversemarginpar\marginnote{\textcolor{mynotecolor}{#1}}}
+}
 
+\title{Notes of Real Analysis}
+\author{Renhe W.}
+\date{}
 
 %文章开始部分
 \begin{document}
 	\maketitle
 	\tableofcontents
-	% \newpage
+	
+	\newpage
 	\kaishu
 	%引言
 	\section{Introduction}
-	This note is to provide an easy understanding of Real Analysis, and to continue to understand and work on more specific areas. 参考YouTube上\url{https://www.youtube.com/@brightsideofmaths}博主的教学视频整理的学习笔记。
+	This note is to provide an easy understanding of Real Analysis, and to continue to understand and work on more specific areas. And the content are almost come from \href{https://www.bilibili.com/video/BV1FT411C7wM/?spm_id_from=333.337.search-card.all.click&vd_source=ba9c3e9308deddcceb8190c43ed27dfd}{bilibili}
 	
-	\section{Sequences and Limits}
 	
-	\section{Bounded sequence and Unique Limits}
+	\chapter{Abstract Measures}
+	\section{Building Block}
+	\begin{definition}[closed rectangle]
+		A \textbf{closed rectangle} $R$ in $\mathbb{R}^d$ is defined as the Cartesian product of closed intervals. Specifically, $R$ can be written as:
+		$$
+		R=\left[a_1, b_1\right] \times\left[a_2, b_2\right] \times \cdots \times\left[a_d, b_d\right],
+		$$
+		where $\left[a_i, b_i\right]$ are closed intervals on the real line, and $a_i \leq b_i$ for all $i$ from 1 to $d$.
+		
+		In other words,
+		$$
+		R = \{(X_1,X_2,\dots,X_d)\in\mathbb{R}^d:a_j\leq b_j, j = 1,\dots,d\},
+		$$
+		The {\color{blue}volume} of $R$ is
+		$$
+			\left | R \right | = \left(b_1-a_1\right) \times \left(b_2-a_2\right) \times \cdots \times\left(b_d-a_d\right),
+		$$
+		An \textbf{open rectangle} is the product of open intervals, and the interior of the rectangle $R$ is
+		$$
+			\left(a_1, b_1\right) \times\left(a_2, b_2\right) \times \cdots \times\left(a_d, b_d\right).
+		$$
+	\end{definition}
 	
-	\section{Theorem on Limits}
+	\begin{example}[Closed Rectangles]There are some examples of \textbf{closed rectangle}:
+		\begin{enumerate}
+			\item  In $\mathbb{R}^2$ (the plane), a building block might be a rectangle defined by $R=[1,3] \times[2,4]$. This rectangle includes all points $(x, y)$ where $1 \leq x \leq 3$ and $2 \leq y \leq 4$.
+			\begin{figure}[H] 
+				\centering  
+			\begin{tikzpicture}[scale=0.6]
+				% Draw the axes
+				\draw[thin,gray!40] (-1,-1) grid (5,5);
+				\draw[->] (-1,0)--(5,0) node[right]{$x$};
+				\draw[->] (0,-1)--(0,5) node[above]{$y$};
+				
+				% Draw the rectangle with points and labels
+				\draw[thick] (1,2) rectangle (3,4);
+				\foreach \x/\xtext in {1, 3}
+				\draw (\x,1pt) -- (\x,-3pt) node[anchor=north] {$\x$};
+				\foreach \y/\ytext in {2, 4}
+				\draw (1pt,\y) -- (-3pt,\y) node[anchor=east] {$\y$};
+				
+				% Label the rectangle
+				\node at (2,3) {$R$};
+			\end{tikzpicture}
+			 \caption{The rectangle $R = [1, 3] \times [2, 4]$ in $\mathbb{R}^2$}
+			\end{figure}
+			\item  In $\mathbb{R}^3$ (three-dimensional space), a typical building block could be a rectangular prism (or box) defined by $R=[0,1] \times[0,1] \times[0,1]$. This includes all points $(x, y, z)$ where $0 \leq x \leq 1,0 \leq y \leq 1$, and $0 \leq z \leq 1$.
+		\end{enumerate}
+	\end{example}
 	
-	\section{Sandwich Theorem}
+	\begin{definition}[Almost Disjoint]
+		A union of rectangles is said to be {\color{blue}almost disjoint} if the interiors of them are disjoint.
+	\end{definition}
 	
-	\section{Supremum and Infimum}
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			% Define colors for visibility
+			\definecolor{lightblue}{RGB}{173,216,230}
+			
+			% Draw the first rectangle
+			\filldraw[fill=lightblue, draw=black] (0,0) rectangle (2,1);
+			\node at (1, 0.5) {$R_1$};
+			
+			% Draw the second rectangle
+			\filldraw[fill=lightblue, draw=black] (2,0) rectangle (4,1);
+			\node at (3, 0.5) {$R_2$};
+			
+			% Draw the third rectangle
+			\filldraw[fill=lightblue, draw=black] (1,-1) rectangle (3,0);
+			\node at (2, -0.5) {$R_3$};
+			
+			% Label the touching points
+			\draw[fill=red] (2,0) circle (2pt);
+			\draw[fill=red] (1,0) circle (2pt);
+			\draw[fill=red] (3,0) circle (2pt);
+			
+			% Draw axes (optional, for reference)
+			\draw[thick,->] (-0.5,0) -- (4.5,0) node[right] {$x$};
+			\draw[thick,->] (0,-1.5) -- (0,1.5) node[above] {$y$};
+		\end{tikzpicture}
+	\end{figure}
+	The rectangle $R_1$ and $R_2$ share a common boundary along the line $x=2$ but do not overlap. $R_3$ is positioned such that it touches the bottom edges of $R_1$ and $R_2$ at points along the line $y=0$. The points where the rectangles touch are highlighted with red dots to emphasize the boundary interactions but no interior overlap.
+	\begin{lemma}
+		If a rectangles is the almost disjoint union of finitely many rectangles: $R=\bigcup_{N}^{k=1} R_k $, then $\left | R \right |=\sum_{k=1}^{N}\left | R_k \right |$.
+	\end{lemma}
+	这个引理描述了一种特殊情况，其中一个矩形 \( R \) 是有限个几乎不相交的矩形的并集，即 \( R=\bigcup_{k=1}^N R_k \)，并且这些矩形的内部不相交. 在这种情况下，\( R \) 的体积等于所有这些子矩形体积的总和.
+	\begin{proof}
+		定义每个 \( R_k \) 为闭矩形 \([a_{k1}, b_{k1}] \times [a_{k2}, b_{k2}] \times \cdots \times [a_{kd}, b_{kd}]\), 对于任何 \( i \neq j \)，\( \text{int}(R_i) \cap \text{int}(R_j) = \emptyset \). \marginnote{\tiny Almost Disjoint}其中每个 \( R_k \) 的体积计算为 \( |R_k| = \prod_{j=1}^d (b_{kj} - a_{kj}) \).
+		
+		设 \( R = [a_1, b_1] \times [a_2, b_2] \times \cdots \times [a_d, b_d] \)，其中 \( a_j = \min_k a_{kj} \)，\( b_j = \max_k b_{kj} \)\marginnote{\tiny 最小包含矩形 \( R \)}.
+		
+		由于 \( \text{int}(R_i) \cap \text{int}(R_j) = \emptyset \)，可以断定每个 \( R_k \) 的体积贡献是独立的，即它们的体积之和给出了 \( R \) 中被覆盖的全部体积.
+		
+		\( R_k \) 的边界可能与其他 \( R_k \) 的边界重合，但由于边界的测度在整体测度中不起主导作用（在高维中测度为零），因此不影响总体积计算.
+		
+		因此，可以通过各 \( R_k \) 的体积独立累加，无需减去重叠部分，从而得到 \( R \) 的总体积，即 \( |R| = \sum_{k=1}^N |R_k| \).
+	\end{proof}
 	
-	\section{Cauchy Sequences and}
-	
-	\section{Example Calculation}
-	
-	\section{Subsequences}
-	
-	\section{Bolzano}
-	
-	\section{Superior and Limit}
-	
-	\section{Examples for Limit}
-	
-	\section{Open, Closed and Conpact Sets}
+	\begin{lemma}
+		If $R, R_1,\dots, R_N$ are rectangles, and $R \subset \bigcup_{}^{}$
+		
+	\end{lemma}
 	
 	
 \end{document}

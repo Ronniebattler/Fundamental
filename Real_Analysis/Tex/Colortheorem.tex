@@ -1,0 +1,291 @@
+\def\renewtheorem#1{%
+	\expandafter\let\csname#1\endcsname\relax
+	\expandafter\let\csname c@#1\endcsname\relax
+	\gdef\renewtheorem@envname{#1}
+	\renewtheorem@secpar
+}
+\def\renewtheorem@secpar{\@ifnextchar[{\renewtheorem@numberedlike}{\renewtheorem@nonumberedlike}}
+\def\renewtheorem@numberedlike[#1]#2{\newtheorem{\renewtheorem@envname}[#1]{#2}}
+\def\renewtheorem@nonumberedlike#1{
+	\def\renewtheorem@caption{#1}
+	\edef\renewtheorem@nowithin{\noexpand\newtheorem{\renewtheorem@envname}{\renewtheorem@caption}}
+	\renewtheorem@thirdpar
+}
+\def\renewtheorem@thirdpar{\@ifnextchar[{\renewtheorem@within}{\renewtheorem@nowithin}}
+\def\renewtheorem@within[#1]{\renewtheorem@nowithin[#1]}
+
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%
+% New environments %
+%%%%%%%%%%%%%%%%%%%%
+
+\makeatother
+\mdfsetup{skipabove=1em,skipbelow=0em}
+
+\tcbuselibrary{skins}
+
+% Color definitions
+
+\definecolor{proofcolor}{RGB}{0,0,0}
+
+% Dark orange and Dark Red rgb
+\definecolor{theorembordercolor}{RGB}{151, 63, 5}
+\definecolor{theorembackgroundcolor}{RGB}{248, 241, 234}
+
+\definecolor{examplebordercolor}{RGB}{0, 110, 184}
+\definecolor{examplebackgroundcolor}{RGB}{240, 244, 250}
+
+\definecolor{definitionbordercolor}{RGB}{0, 150, 85}
+\definecolor{definitionbackgroundcolor}{RGB}{239, 247, 243}
+
+\definecolor{propertybordercolor}{RGB}{128, 0, 128}
+\definecolor{propertybackgroundcolor}{RGB}{255, 240, 255}
+
+\definecolor{formulabordercolor}{RGB}{0, 0, 0}
+\definecolor{formulabackgroundcolor}{RGB}{230, 229, 245}
+
+\newtheoremstyle{theorem}
+{0pt}{0pt}{\normalfont}{0pt}
+{}{\;}{0.25em}
+{{\sffamily\bfseries\color{theorembordercolor}\thmname{#1}~\thmnumber{\textup{#2}}.}
+	\thmnote{\normalfont\color{black}~(#3)}}
+
+\newtheoremstyle{definition}
+{0pt}{0pt}{\normalfont}{0pt}
+{}{\;}{0.25em}
+{{\sffamily\bfseries\color{definitionbordercolor}\thmname{#1}~\thmnumber{\textup{#2}}.}
+	\thmnote{\normalfont\color{black}~(#3)}}
+
+\newtheoremstyle{example}
+{0pt}{0pt}{\normalfont}{0pt}
+{}{\;}{0.25em}
+{{\sffamily\bfseries\color{examplebordercolor}\thmname{#1}~\thmnumber{\textup{#2}}.}
+	\thmnote{\normalfont\color{black}~(#3)}}
+
+\newtheoremstyle{property}
+{0pt}{0pt}{\normalfont}{0pt}
+{}{\;}{0.25em}
+{{\sffamily\bfseries\color{propertybordercolor}\thmname{#1}~\thmnumber{\textup{#2}}.}
+	\thmnote{\normalfont\color{black}~(#3)}}
+
+\newtheoremstyle{formula}
+{0pt}{0pt}{\normalfont}{0pt}
+{}{\;}{0.25em}
+{{\sffamily\bfseries\color{formulabordercolor}\thmname{#1}~\thmnumber{\textup{#2}}.}
+	\thmnote{\normalfont\color{black}~(#3)}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Theorem Environments %
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\theoremstyle{theorem}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{postulate}{Postulate}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{conclusion}{Conclusion}
+
+\tcolorboxenvironment{theorem}{
+	enhanced jigsaw, pad at break*=1mm, breakable,
+	left=4mm, right=4mm, top=1mm, bottom=1mm,
+	colback=theorembackgroundcolor, boxrule=0pt, frame hidden,
+	borderline west={0.5mm}{0mm}{theorembordercolor}, arc=.5mm
+}
+\tcolorboxenvironment{postulate}{
+	enhanced jigsaw, pad at break*=1mm, breakable,
+	left=4mm, right=4mm, top=1mm, bottom=1mm,
+	colback=theorembackgroundcolor, boxrule=0pt, frame hidden,
+	borderline west={0.5mm}{0mm}{theorembordercolor}, arc=.5mm
+}
+\tcolorboxenvironment{conjecture}{
+	enhanced jigsaw, pad at break*=1mm, breakable,
+	left=4mm, right=4mm, top=1mm, bottom=1mm,
+	colback=theorembackgroundcolor, boxrule=0pt, frame hidden,
+	borderline west={0.5mm}{0mm}{theorembordercolor}, arc=.5mm
+}
+\tcolorboxenvironment{corollary}{
+	enhanced jigsaw, pad at break*=1mm, breakable,
+	left=4mm, right=4mm, top=1mm, bottom=1mm,
+	colback=theorembackgroundcolor, boxrule=0pt, frame hidden,
+	borderline west={0.5mm}{0mm}{theorembordercolor}, arc=.5mm
+}
+\tcolorboxenvironment{lemma}{
+	enhanced jigsaw, pad at break*=1mm, breakable,
+	left=4mm, right=4mm, top=1mm, bottom=1mm,
+	colback=theorembackgroundcolor, boxrule=0pt, frame hidden,
+	borderline west={0.5mm}{0mm}{theorembordercolor}, arc=.5mm
+}
+\tcolorboxenvironment{conclusion}{
+	enhanced jigsaw, pad at break*=1mm, breakable,
+	left=4mm, right=4mm, top=1mm, bottom=1mm,
+	colback=theorembackgroundcolor, boxrule=0pt, frame hidden,
+	borderline west={0.5mm}{0mm}{theorembordercolor}, arc=.5mm
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definition Environments %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{review}{Review}
+
+\tcolorboxenvironment{definition}{
+	enhanced jigsaw, pad at break*=1mm, breakable,
+	left=4mm, right=4mm, top=1mm, bottom=1mm,
+	colback=definitionbackgroundcolor, boxrule=0pt, frame hidden,
+	borderline west={0.5mm}{0mm}{definitionbordercolor}, arc=.5mm
+}
+\tcolorboxenvironment{review}{
+	enhanced jigsaw, pad at break*=1mm, breakable,
+	left=4mm, right=4mm, top=1mm, bottom=1mm,
+	colback=definitionbackgroundcolor, boxrule=0pt, frame hidden,
+	borderline west={0.5mm}{0mm}{definitionbordercolor}, arc=.5mm
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Example Environments %
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\theoremstyle{example}
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}
+\newtheorem{note}{Note}
+
+\tcolorboxenvironment{example}{
+	enhanced jigsaw, pad at break*=1mm, breakable,
+	left=4mm, right=4mm, top=1mm, bottom=1mm,
+	colback=examplebackgroundcolor, boxrule=0pt, frame hidden,
+	borderline west={0.5mm}{0mm}{examplebordercolor}, arc=.5mm
+}
+\tcolorboxenvironment{remark}{
+	enhanced jigsaw, pad at break*=1mm, breakable,
+	left=4mm, right=4mm, top=1mm, bottom=1mm,
+	colback=white, boxrule=0pt, frame hidden,
+	borderline west={0.5mm}{0mm}{examplebordercolor}, arc=.5mm
+}
+\tcolorboxenvironment{note}{
+	enhanced jigsaw, pad at break*=1mm, breakable,
+	left=4mm, right=4mm, top=1mm, bottom=1mm,
+	colback=white, boxrule=0pt, frame hidden,
+	borderline west={0.5mm}{0mm}{examplebordercolor}, arc=.5mm
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Property Environments %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\theoremstyle{property}
+\newtheorem{property}{Property}[section]
+\newtheorem{proposition}{Proposition}[section]
+
+\tcolorboxenvironment{property}{
+	enhanced jigsaw, pad at break*=1mm, breakable,
+	left=4mm, right=4mm, top=1mm, bottom=1mm,
+	colback=propertybackgroundcolor, boxrule=0pt, frame hidden,
+	borderline west={0.5mm}{0mm}{propertybordercolor}, arc=.5mm
+}
+\tcolorboxenvironment{proposition}{
+	enhanced jigsaw, pad at break*=1mm, breakable,
+	left=4mm, right=4mm, top=1mm, bottom=1mm,
+	colback=propertybackgroundcolor, boxrule=0pt, frame hidden,
+	borderline west={0.5mm}{0mm}{propertybordercolor}, arc=.5mm
+}
+
+%%%%%%%%%%%%
+% Formula %
+%%%%%%%%%%%%
+
+\theoremstyle{formula}
+\newtheorem{formula}{Formula}[section]
+
+\tcolorboxenvironment{formula}{
+	enhanced jigsaw, pad at break*=1mm, breakable,
+	left=4mm, right=4mm, top=1mm, bottom=1mm,
+	colback=formulabackgroundcolor, boxrule=0pt, frame hidden,
+	borderline west={0.5mm}{0mm}{formulabordercolor}, arc=.5mm
+}
+
+%%%%%%%%%
+% Proof %
+%%%%%%%%%
+
+% These patches must be placed after \tcolorboxenvironment !
+\AddToHook{env/theorem/after}{\colorlet{proofcolor}{theorembordercolor}}
+\AddToHook{env/postulate/after}{\colorlet{proofcolor}{theorembordercolor}}
+\AddToHook{env/conjecture/after}{\colorlet{proofcolor}{theorembordercolor}}
+\AddToHook{env/corollary/after}{\colorlet{proofcolor}{theorembordercolor}}
+\AddToHook{env/lemma/after}{\colorlet{proofcolor}{theorembordercolor}}
+\AddToHook{env/conclusion/after}{\colorlet{proofcolor}{theorembordercolor}}
+
+\AddToHook{env/definition/after}{\colorlet{proofcolor}{definitionbordercolor}}
+\AddToHook{env/review/after}{\colorlet{proofcolor}{definitionbordercolor}}
+
+\AddToHook{env/example/after}{\colorlet{proofcolor}{examplebordercolor}}
+\AddToHook{env/remark/after}{\colorlet{proofcolor}{examplebordercolor}}
+\AddToHook{env/note/after}{\colorlet{proofcolor}{examplebordercolor}}
+
+\AddToHook{env/property/after}{\colorlet{proofcolor}{propertybordercolor}}
+\AddToHook{env/proposition/after}{\colorlet{proofcolor}{propertybordercolor}}
+
+\AddToHook{env/formula/after}{\colorlet{proofcolor}{formulabordercolor}}
+
+\renewcommand{\qedsymbol}{Q.E.D.}
+\let\qedsymbolMyOriginal\qedsymbol
+\renewcommand{\qedsymbol}{
+	\color{proofcolor}\qedsymbolMyOriginal
+}
+
+\newtheoremstyle{proof}
+{0pt}{0pt}{\normalfont}{0pt}
+{}{\;}{0.25em}
+{{\sffamily\bfseries\color{proofcolor}\thmname{#1}.}
+	\thmnote{\normalfont\color{black}~(\textit{#3})}}
+
+\theoremstyle{proof}
+%\renewtheorem{proof}{Proof}
+
+\tcolorboxenvironment{proof}{
+	enhanced jigsaw, pad at break*=1mm, breakable,
+	left=4mm, right=4mm, top=1mm, bottom=1mm,
+	colback=white, boxrule=0pt, frame hidden,
+	borderline west={0.5mm}{0mm}{proofcolor}, arc=.5mm
+}
+
+\newenvironment{info}{\begin{tcolorbox}[
+		arc=0mm,
+		colback=white,
+		colframe=gray,
+		title=Info,
+		fonttitle=\sffamily,
+		breakable
+		]}{\end{tcolorbox}}
+\newenvironment{terminology}{\begin{tcolorbox}[
+		arc=0mm,
+		colback=white,
+		colframe=green!60!black,
+		title=Terminology,
+		fonttitle=\sffamily,
+		breakable
+		]}{\end{tcolorbox}}
+\newenvironment{warning}{\begin{tcolorbox}[
+		arc=0mm,
+		colback=white,
+		colframe=red,
+		title=Warning,
+		fonttitle=\sffamily,
+		breakable
+		]}{\end{tcolorbox}}
+\newenvironment{caution}{\begin{tcolorbox}[
+		arc=0mm,
+		colback=white,
+		colframe=yellow,
+		title=Caution,
+		fonttitle=\sffamily,
+		breakable
+		]}{\end{tcolorbox}}
